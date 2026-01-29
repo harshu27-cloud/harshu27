@@ -7,24 +7,73 @@
   <meta name="description" content="RK InfoSec Solutions delivers proactive cybersecurity services including SOC, VAPT, incident response, and compliance consulting." />
 
   <style>
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       background-color: #0b1220;
       color: #ffffff;
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
-    /* HEADER */
-    .site-header {
-      padding: 20px 10%;
+    /* NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 10%;
       background-color: #060b15;
+    }
+
+    .navbar img {
+      height: 55px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      color: #4da3ff;
     }
 
     /* HERO BANNER */
     .hero-banner {
       background: url('banner.png') center/cover no-repeat;
       height: 380px;
+      display: flex;
+      align-items: center;
+      padding: 0 10%;
+    }
+
+    .hero-box {
+      background: rgba(0,0,0,0.65);
+      padding: 30px 40px;
+      border-radius: 8px;
+    }
+
+    .hero-box h1 {
+      margin: 0;
+      font-size: 38px;
+    }
+
+    .hero-box p {
+      margin-top: 10px;
+      font-size: 18px;
+      letter-spacing: 2px;
+      color: #4da3ff;
     }
 
     /* SECTIONS */
@@ -63,15 +112,31 @@
       color: #4da3ff;
       text-decoration: none;
     }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .hero-banner {
+        height: 300px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- HEADER (LOGO REMOVED) -->
-  <header class="site-header"></header>
+  <!-- NAVBAR WITH LOGO -->
+  <div class="navbar">
+    <img src="logo.png" alt="RK InfoSec Solutions Logo">
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
 
-  <!-- HERO BANNER (TEXT REMOVED) -->
-  <section class="hero-banner"></section>
 
   <!-- WHY US -->
   <section>
@@ -85,7 +150,7 @@
   </section>
 
   <!-- SERVICES -->
-  <section>
+  <section id="services">
     <h2>Our Services</h2>
     <div class="grid">
       <div class="card"><strong>Security Operations Center (SOC)</strong><br />24×7 monitoring, alert analysis, and threat detection.</div>
@@ -98,13 +163,13 @@
   </section>
 
   <!-- ABOUT -->
-  <section>
+  <section id="about">
     <h2>About Us</h2>
     <p>RK InfoSec Solutions was founded with a mission to secure the digital world from evolving cyber threats. We help organizations measure, mature, and manage their cybersecurity posture with clarity and confidence.</p>
   </section>
 
   <!-- CONTACT -->
-  <section>
+  <section id="contact">
     <h2>Contact Us</h2>
     <p>Email: <a href="mailto:rk.infosecc@gmail.com">rk.infosecc@gmail.com</a></p>
     <p>Website: rkinfosecsolutions.co.in</p>
@@ -112,7 +177,7 @@
 
   <!-- FOOTER -->
   <footer>
-    © 2026 RK InfoSec Solutions. All Rights Reserved.
+    © 2026 RK InfoSec Solutions | Prevent • Detect • Respond
   </footer>
 
 </body>
