@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0a0f1c;
+    color: #ffffff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #050914;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #00e0ff;
+}
+
+nav a {
+    margin-left: 15px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #050914, #0a1a33);
+}
+
+.hero h1 {
+    font-size: 40px;
+    color: #00e0ff;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #00e0ff;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    gap: 20px;
+}
+
+.card {
+    background: #111827;
+    padding: 20px;
+    width: 250px;
+    border-radius: 8px;
+}
+
+.page {
+    padding: 40px;
+    text-align: center;
+}
+
+.services-list {
+    list-style: none;
+    padding: 0;
+}
+
+.services-list li {
+    padding: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.contact-form button {
+    padding: 10px;
+    background: #00e0ff;
+    border: none;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #050914;
+    margin-top: 40px;
+}
