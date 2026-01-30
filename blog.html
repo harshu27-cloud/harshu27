@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | RK InfoSec Solutions</title>
+  <meta name="description" content="Cybersecurity insights, threat research, and security best practices by RK InfoSec Solutions." />
+
+  <!-- Your main CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <img src="assets/rk-logo.png" style="height:38px" />
+    <h1>RK InfoSec Solutions</h1>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="blog.html" class="active">Blog</a>
+    <a href="internship.html">Training</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- Hero Banner -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h2>Trending_Cyber_Blog</h2>
+    <p>Threat intelligence, Security Research, And Expert Insights From RK InfoSec Solutions.</p>
+  </div>
+</section>
+
+<!-- Blog Section -->
+<section>
+  <h2 class="section-title">Latest Articles</h2>
+
+  <div class="blog-grid">
+
+    <!-- VAPT -->
+    <div class="blog-card">
+      <img src="assets/blog-vapt.jpg" alt="VAPT Security">
+      <div class="blog-content">
+        <h3>What is VAPT and Why Every Company Needs It?</h3>
+
+        <p class="short-text">
+          Understand how Vulnerability Assessment and Penetration Testing helps identify
+          real-world security gaps before attackers do.
+        </p>
+
+        <p class="full-text" style="display:none;">
+          VAPT simulates real-world cyber attacks on web applications, APIs, networks,
+          and cloud systems. It helps organizations understand their actual security posture,
+          prioritize risks using CVSS scoring, and apply remediation strategies before
+          real attackers exploit these vulnerabilities.
+        </p>
+
+        <a href="javascript:void(0)" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <!-- SOC -->
+<div class="blog-card">
+  <img src="assets/blog-soc.jpg" alt="SOC Security">
+  <div class="blog-content">
+    <h3>Inside a Modern Security Operations Center (SOC)</h3>
+
+    <p class="short-text">
+      Explore how SOC teams detect, analyze, and respond to cyber threats in real time
+      using SIEM, SOAR, and EDR platforms.
+    </p>
+
+    <p class="full-text" style="display:none;">
+      A modern Security Operations Center (SOC) is the core of an organization’s cyber 
+      defense strategy. It continuously monitors logs, network traffic, endpoints, 
+      cloud workloads, and user activities to detect suspicious behavior.<br><br>
+
+      SOC analysts use SIEM platforms like Splunk or ELK to correlate events, reduce 
+      false positives, and prioritize high-risk alerts. Advanced SOCs integrate EDR, 
+      NDR, and SOAR tools to automate incident response, isolate infected systems, 
+      block malicious IPs, and contain breaches in real time.<br><br>
+
+      The primary goal of a SOC is to ensure business continuity by detecting threats 
+      early, minimizing impact, and providing forensic reports for management and 
+      compliance requirements.
+    </p>
+
+    <a href="javascript:void(0)" class="read-more">Read More →</a>
+  </div>
+</div>
+
+
+<!-- DFIR -->
+<div class="blog-card">
+  <img src="assets/blog-dfir.jpg" alt="DFIR">
+  <div class="blog-content">
+    <h3>Digital Forensics & Incident Response Explained</h3>
+
+    <p class="short-text">
+      Learn how DFIR helps investigate breaches, analyze malware, and collect
+      digital evidence for legal and security purposes.
+    </p>
+
+    <p class="full-text" style="display:none;">
+      Digital Forensics & Incident Response (DFIR) focuses on identifying, 
+      investigating, and responding to cybersecurity incidents. When a breach 
+      occurs, DFIR specialists collect digital evidence from servers, endpoints, 
+      network devices, and cloud platforms to reconstruct the attack timeline.<br><br>
+
+      Forensic analysts use tools such as Volatility, Autopsy, FTK Imager, and 
+      Wireshark to analyze memory dumps, disk images, logs, and network traffic. 
+      This helps determine attacker techniques, persistence mechanisms, and 
+      compromised assets.<br><br>
+
+      Incident Response teams then work to contain the threat, remove malicious 
+      artifacts, restore systems, and provide forensic reports that support legal 
+      action, compliance audits, and long-term security improvements.
+    </p>
+
+    <a href="javascript:void(0)" class="read-more">Read More →</a>
+  </div>
+</div>
+
+
+    <!-- Cloud -->
+<div class="blog-card">
+  <img src="assets/blog-cloud.jpg" alt="Cloud Security">
+  <div class="blog-content">
+    <h3>Cloud Security Best Practices for Enterprises</h3>
+
+    <p class="short-text">
+      A practical guide to securing AWS and Azure environments with IAM,
+      logging, monitoring, and zero-trust architecture.
+    </p>
+
+    <p class="full-text" style="display:none;">
+      Cloud security focuses on protecting cloud-based workloads, data, and 
+      infrastructure from modern cyber threats. It involves implementing strong 
+      Identity and Access Management (IAM), network segmentation, encryption, 
+      and continuous monitoring across cloud environments.<br><br>
+
+      Security teams use native cloud tools such as AWS Security Hub, Azure 
+      Defender, and Google Security Command Center to detect misconfigurations, 
+      monitor suspicious activity, and enforce compliance policies. Zero-trust 
+      architecture ensures that every user, device, and workload is verified 
+      before access is granted.<br><br>
+
+      Effective cloud security helps organizations prevent data breaches, 
+      maintain regulatory compliance, and ensure high availability of 
+      mission-critical cloud services.
+    </p>
+
+    <a href="javascript:void(0)" class="read-more">Read More →</a>
+  </div>
+</div>
+
+
+  </div>
+</section>
+
+<footer>
+  © 2026 RK InfoSec Solutions. All Rights Reserved.
+</footer>
+
+<!-- Read More Logic -->
+<script>
+  document.querySelectorAll(".read-more").forEach(btn => {
+    btn.addEventListener("click", function(){
+      const fullText = this.previousElementSibling;
+
+      if(fullText.style.display === "block"){
+        fullText.style.display = "none";
+        this.textContent = "Read More →";
+      } else {
+        fullText.style.display = "block";
+        this.textContent = "Read Less ←";
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

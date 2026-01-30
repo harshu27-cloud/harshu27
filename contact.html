@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | RK InfoSec Solutions</title>
+  <meta name="description" content="Contact RK InfoSec Solutions for VAPT, SOC, DFIR, Cloud & Network Security services." />
+
+  <style>
+    /* =================== BASE THEME (matches your website) =================== */
+    body{
+      margin:0;
+      font-family:'Segoe UI',Tahoma,sans-serif;
+      background:#0b0f1a;
+      color:#e5e7eb;
+      overflow-x:hidden;
+    }
+
+    /* Neon grid background */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:
+        linear-gradient(rgba(56,189,248,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56,189,248,0.06) 1px, transparent 1px);
+      background-size:70px 70px;
+      opacity:.55;
+      animation:gridMove 35s linear infinite;
+      pointer-events:none;
+      z-index:-1;
+    }
+    @keyframes gridMove{
+      from{background-position:0 0,0 0;}
+      to{background-position:700px 700px,700px 700px;}
+    }
+
+    /* Header */
+    header{
+      background:rgba(2,6,23,0.85);
+      backdrop-filter:blur(8px);
+      padding:20px 80px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+    header h1{
+      color:#38bdf8;
+      font-size:26px;
+      margin:0;
+      letter-spacing:1px;
+    }
+    nav a{
+      color:#e5e7eb;
+      margin-left:25px;
+      text-decoration:none;
+      font-weight:500;
+      position:relative;
+    }
+    nav a:hover{color:#38bdf8;}
+    nav a.active{color:#38bdf8;}
+    nav a.active::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-10px;
+      width:100%;
+      height:2px;
+      background:rgba(56,189,248,0.8);
+      border-radius:999px;
+    }
+
+    /* Hero */
+    .hero{
+      position:relative;
+      min-height:55vh;
+      background:url('assets/rk-banner.jpg') center/cover no-repeat;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+    }
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(2,6,23,0.82), rgba(2,6,23,0.95));
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:radial-gradient(circle at 50% 30%, rgba(56,189,248,0.18), transparent 55%);
+      animation:heroGlow 7s ease-in-out infinite;
+      pointer-events:none;
+      z-index:0;
+    }
+    @keyframes heroGlow{
+      0%,100%{opacity:.45;transform:scale(1);}
+      50%{opacity:.85;transform:scale(1.02);}
+    }
+    .hero-content{
+      position:relative;
+      z-index:2;
+      max-width:900px;
+      padding:40px;
+    }
+    .hero h2{
+      font-size:44px;
+      margin:0 0 14px;
+      color:#38bdf8;
+      letter-spacing:1px;
+    }
+    .hero p{
+      font-size:18px;
+      margin:0;
+      color:#cbd5f5;
+      line-height:1.7;
+    }
+    .hero-tagline{
+      margin-top:18px;
+      font-size:14px;
+      letter-spacing:4px;
+      text-transform:uppercase;
+      color:#94a3b8;
+    }
+
+    /* Sections */
+    section{padding:90px 80px;}
+    .section-title{
+      font-size:32px;
+      color:#38bdf8;
+      margin-bottom:50px;
+      text-align:center;
+      letter-spacing:1px;
+    }
+
+    /* Grid + cards */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:35px;
+      max-width:1100px;
+      margin:0 auto;
+    }
+    .card{
+      background:linear-gradient(180deg,#020617,#020617);
+      padding:35px;
+      border-radius:16px;
+      border:1px solid rgba(56,189,248,0.15);
+      transition:transform .3s ease, box-shadow .3s ease;
+      position:relative;
+      overflow:hidden;
+    }
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 20px 40px rgba(56,189,248,0.12);
+    }
+
+    /* Futuristic scan */
+    .card::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(120deg, transparent, rgba(56,189,248,0.18), transparent);
+      transform:translateX(-120%);
+      transition:transform .6s ease;
+      pointer-events:none;
+    }
+    .card:hover::after{transform:translateX(120%);}
+
+    /* =================== CONTACT INFO (BIGGER / BOLDER) =================== */
+    .contact-info h3{
+      font-size:30px;
+      margin:0 0 18px;
+      color:#38bdf8;
+      letter-spacing:.6px;
+    }
+    .contact-info .lead{
+      font-size:18px;
+      line-height:1.9;
+      color:#cbd5f5;
+      margin:0 0 18px;
+    }
+    .info-row{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      padding:14px 0;
+      border-bottom:1px solid rgba(56,189,248,0.12);
+    }
+    .info-row:last-child{border-bottom:none;}
+    .icon{
+      width:40px;
+      height:40px;
+      border-radius:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(56,189,248,0.10);
+      border:1px solid rgba(56,189,248,0.18);
+      flex:0 0 40px;
+      font-size:18px;
+    }
+    .info-text .label{
+      font-size:16px;
+      color:#94a3b8;
+      letter-spacing:.3px;
+      margin-bottom:4px;
+    }
+    .info-text .value{
+      font-size:18px;
+      color:#e5e7eb;
+      font-weight:700;
+      line-height:1.6;
+      word-break:break-word;
+    }
+    .services-list{
+      margin:18px 0 0;
+      padding-left:18px;
+      color:#cbd5f5;
+      font-size:17px;
+      line-height:1.9;
+    }
+
+    /* =================== FORM =================== */
+    .form-title{
+      font-size:26px;
+      margin:0 0 16px;
+      color:#38bdf8;
+    }
+    .form-sub{
+      margin:0 0 18px;
+      color:#cbd5f5;
+      line-height:1.8;
+      font-size:16px;
+    }
+    .form-box{
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(56,189,248,0.22);
+      box-shadow:0 0 25px rgba(56,189,248,0.10);
+      background:rgba(2,6,23,0.55);
+    }
+    iframe{display:block;}
+
+    /* Map */
+    .map-wrap{
+      max-width:1100px;
+      margin:0 auto;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(56,189,248,0.25);
+      box-shadow:0 0 25px rgba(56,189,248,0.10);
+    }
+
+    /* Footer */
+    footer{
+      background-color:#020617;
+      padding:30px;
+      text-align:center;
+      color:#94a3b8;
+      font-size:14px;
+      letter-spacing:1px;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      header{padding:16px 20px;}
+      section{padding:70px 20px;}
+      .grid{grid-template-columns:1fr;}
+      .hero h2{font-size:38px;}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <img src="assets/rk-logo.png" alt="RK InfoSec Logo" style="height:42px;" />
+    <h1>RK InfoSec Solutions</h1>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="blog.html">Blog</a>
+    <a href="internship.html">Training</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h2>Contact RK InfoSec</h2>
+    <p>Discuss VAPT, SOC, DFIR, Cloud Security, or compliance needs with our cybersecurity team.</p>
+    <div class="hero-tagline">FAST RESPONSE • ENTERPRISE FOCUS</div>
+  </div>
+</section>
+
+<section>
+  <div class="grid">
+
+    <!-- LEFT: Contact Info (Bigger / Professional) -->
+    <div class="card contact-info">
+      <h3>Contact Information</h3>
+      <p class="lead">
+        Reach out for enterprise-grade cybersecurity services, proposals, or partnership opportunities.
+      </p>
+
+      <div class="info-row">
+        <div class="icon">✉️</div>
+        <div class="info-text">
+          <div class="label">Email</div>
+          <div class="value">rk@infosecc@gmail.com</div>
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="icon">📍</div>
+        <div class="info-text">
+          <div class="label">Location</div>
+          <div class="value">Surat,Gujarat,India (Remote Services Available)</div>
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="icon">🕒</div>
+        <div class="info-text">
+          <div class="label">Business Hours</div>
+          <div class="value">Mon – Sat • 09:00 AM – 6:00 PM (IST)</div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px;">
+        <div class="label" style="font-size:16px;color:#94a3b8;">Core Services</div>
+        <ul class="services-list">
+          <li>VAPT (Web / API / Network / Cloud)</li>
+          <li>SOC Monitoring & Incident Response</li>
+          <li>Digital Forensics & Malware Analysis</li>
+          <li>Cloud & Network Security Hardening</li>
+        </ul>
+      </div>
+
+      <p style="margin-top:18px;color:#94a3b8;font-size:15px;line-height:1.8;">
+        Response time: <strong style="color:#e5e7eb;">within 24 hours</strong>.
+      </p>
+    </div>
+
+    <!-- RIGHT: Contact Form (Google Form Embed) -->
+    <div class="card">
+      <h3 class="form-title">Send Us a Message</h3>
+      <p class="form-sub">
+        Fill the form and we’ll get back to you on priority.
+      </p>
+
+      <div class="form-box">
+        <!-- ✅ Replace src with your Google Form Embed link -->
+        <iframe
+          src="https://forms.gle/kbnTqoWcXdap51fc6"
+          width="100%"
+          height="620"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0">
+          Loading…
+        </iframe>
+      </div>
+
+      <p style="margin-top:14px;color:#94a3b8;font-size:14px;line-height:1.8;">
+        * This form is secure and responses are stored for tracking.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Our Location</h2>
+  <div class="map-wrap">
+    <iframe
+      src="https://www.google.com/maps?q=India&output=embed"
+      width="100%"
+      height="380"
+      style="border:0;"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+<footer>
+  © 2026 RK InfoSec Solutions. All Rights Reserved.
+</footer>
+
+<script>
+  // Active nav highlight (auto)
+  (function () {
+    const path = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+    document.querySelectorAll("nav a").forEach(a => {
+      const href = (a.getAttribute("href") || "").toLowerCase();
+      if (href === path) a.classList.add("active");
+    });
+  })();
+</script>
+
+</body>
+</html>
