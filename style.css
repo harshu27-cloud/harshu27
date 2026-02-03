@@ -231,6 +231,115 @@ footer {
   line-height: 1.7;
 }
 
+/* =========================================================
+   RESPONSIVE FIX (Mobile + Tablet) 
+   Paste this at the END of style.css
+========================================================= */
+
+/* Make all images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent horizontal scroll issues on mobile */
+body {
+  overflow-x: hidden;
+}
+
+/* ---------- Tablet (iPad, small laptops) ---------- */
+@media (max-width: 1024px) {
+
+  header {
+    padding: 16px 24px;
+  }
+
+  section {
+    padding: 70px 24px;
+  }
+
+  /* Grids become 2 columns on tablets */
+  .grid,
+  .services,
+  .blog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  /* Hero text slightly smaller */
+  .hero h2 {
+    font-size: 34px;
+  }
+}
+
+/* ---------- Mobile (Android / iPhone) ---------- */
+@media (max-width: 768px) {
+
+  /* Header becomes stacked */
+  header {
+    padding: 14px 16px;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  /* Navigation wraps nicely */
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  nav a {
+    margin-left: 0; /* important */
+    font-size: 14px;
+  }
+
+  /* Sections padding reduced */
+  section {
+    padding: 55px 16px;
+  }
+
+  /* Hero spacing */
+  .hero {
+    min-height: 55vh;
+  }
+
+  .hero-content {
+    padding: 26px 16px;
+  }
+
+  .hero h2 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* All grids become 1 column on mobile */
+  .grid,
+  .services,
+  .blog-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Cards smaller padding */
+  .card {
+    padding: 20px;
+  }
+
+  /* Map / iframe mobile */
+  iframe {
+    width: 100%;
+    height: 420px;
+  }
+}
+
+
+
 
 
 
