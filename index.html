@@ -1,363 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link rel="icon" href="rk-logo.png" type="image">
-  <title>RK InfoSec Solutions | Cybersecurity Services</title>
-  <meta name="description" content="RK InfoSec Solutions – Professional Cybersecurity Services including VAPT, SOC, Digital Forensics, Cloud & Network Security." />
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background-color: #0b0f1a;
-      color: #e5e7eb;
-    }
-    header {
-      background: rgba(2,6,23,0.85);
-      backdrop-filter: blur(8px);
-      padding: 20px 80px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    header h1 {
-      color: #38bdf8;
-      font-size: 26px;
-      margin: 0;
-      letter-spacing: 1px;
-    }
-    nav a {
-      color: #e5e7eb;
-      margin-left: 25px;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    nav a:hover { color: #38bdf8; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RK InfoSec Solutions | Governance, Risk & Compliance Consulting</title>
+<meta name="description" content="RK InfoSec Solutions provides Governance, Risk & Compliance (GRC) advisory including ISO 27001 implementation, risk assessment, internal audit, SOC 2 readiness, and compliance consulting.">
 
-    .hero {
-      position: relative;
-      min-height: 90vh;
-      background: url('rk-banner.jpg') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(2,6,23,0.85), rgba(2,6,23,0.95));
-    }
-    .hero-content {
-      position: relative;
-      max-width: 900px;
-      padding: 40px;
-      z-index: 1;
-    }
-    .hero h2 {
-      font-size: 44px;
-      margin-bottom: 20px;
-      color: #38bdf8;
-      letter-spacing: 1px;
-    }
-    .hero p {
-      font-size: 18px;
-      color: #cbd5f5;
-      line-height: 1.7;
-    }
-    .hero-tagline {
-      margin-top: 30px;
-      font-size: 16px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: #94a3b8;
-    }
-
-    section { padding: 90px 80px; }
-    .section-title {
-      font-size: 32px;
-      color: #38bdf8;
-      margin-bottom: 50px;
-      text-align: center;
-      letter-spacing: 1px;
-    }
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 35px;
-    }
-    .card {
-      background: linear-gradient(180deg, #020617, #020617);
-      padding: 35px;
-      border-radius: 16px;
-      border: 1px solid rgba(56,189,248,0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(56,189,248,0.12);
-    }
-    .card h3 { color: #38bdf8; margin-bottom: 15px; }
-    .card p { color: #cbd5f5; font-size: 15px; line-height: 1.7; }
-
-    .about, .contact {
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-      font-size: 17px;
-      line-height: 1.8;
-    }
-    footer {
-      background-color: #020617;
-      padding: 30px;
-      text-align: center;
-      color: #94a3b8;
-      font-size: 14px;
-      letter-spacing: 1px;
-    }
-
-    /* ===== Neon animated grid (subtle) ===== */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background:
-        linear-gradient(rgba(56,189,248,0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(56,189,248,0.06) 1px, transparent 1px);
-      background-size: 70px 70px;
-      opacity: 0.55;
-      animation: gridMove 35s linear infinite;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    @keyframes gridMove {
-      from { background-position: 0 0, 0 0; }
-      to { background-position: 700px 700px, 700px 700px; }
-    }
-
-    /* ===== Futuristic glow (keeps your banner + text unchanged) ===== */
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 50% 30%, rgba(56,189,248,0.18), transparent 55%);
-      animation: heroGlow 7s ease-in-out infinite;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    @keyframes heroGlow {
-      0%, 100% { opacity: 0.45; transform: scale(1); }
-      50% { opacity: 0.85; transform: scale(1.02); }
-    }
-
-    /* Ensure hero content stays above effects */
-    .hero-content { z-index: 2; }
-    .hero-overlay { z-index: 1; }
-
-  </style>
+<link rel="icon" href="rk-logo.png" type="image/png">
 
 <style>
-:root {
-  --bg-dark: #0b0f1a;
-  --neon-blue: #00eaff;
-  --neon-purple: #8a5cff;
-  --text-light: #e6f1ff;
+:root{
+  --primary:#0b1120;
+  --secondary:#111827;
+  --accent:#2563eb;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
 }
 
-body {
-  background: radial-gradient(circle at top, #11162a, var(--bg-dark));
-  color: var(--text-light);
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
+body{
+  margin:0;
+  font-family:Segoe UI, sans-serif;
+  background-color:var(--primary);
+  color:var(--text);
 }
 
-/* Neon animated grid */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background:
-    linear-gradient(transparent 95%, rgba(0,234,255,0.08) 96%),
-    linear-gradient(90deg, transparent 95%, rgba(138,92,255,0.08) 96%);
-  background-size: 60px 60px;
-  animation: gridMove 20s linear infinite;
-  pointer-events: none;
-  z-index: -1;
+header{
+  background-color:var(--secondary);
+  padding:18px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
 
-@keyframes gridMove {
-  from { background-position: 0 0, 0 0; }
-  to { background-position: 600px 600px, 600px 600px; }
+header h1{
+  margin:0;
+  font-size:22px;
+  color:var(--accent);
 }
 
-header, section {
-  background: rgba(15, 20, 45, 0.75);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(0,234,255,0.15);
-  box-shadow: 0 0 25px rgba(0,234,255,0.08);
+nav a{
+  margin-left:20px;
+  text-decoration:none;
+  color:var(--text);
+  font-weight:500;
 }
 
-.card {
-  background: linear-gradient(135deg, rgba(0,234,255,0.08), rgba(138,92,255,0.08));
-  border: 1px solid rgba(0,234,255,0.25);
-  box-shadow: 0 0 18px rgba(0,234,255,0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+nav a:hover{
+  color:var(--accent);
 }
 
-.card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 0 35px rgba(0,234,255,0.45);
+.hero{
+  padding:120px 20px;
+  text-align:center;
+  background:linear-gradient(180deg, #0b1120, #0f172a);
 }
 
-h1, h2, h3 {
-  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.hero h2{
+  font-size:42px;
+  margin-bottom:20px;
+  color:var(--accent);
 }
 
-button, .btn {
-  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-  color: #000;
-  border: none;
-  box-shadow: 0 0 20px rgba(0,234,255,0.6);
+.hero p{
+  max-width:750px;
+  margin:auto;
+  line-height:1.7;
+  font-size:18px;
+  color:var(--muted);
 }
 
-button:hover, .btn:hover {
-  box-shadow: 0 0 35px rgba(0,234,255,0.9);
+.btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:12px 24px;
+  background:var(--accent);
+  color:white;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:600;
+}
+
+section{
+  padding:80px 60px;
+}
+
+.section-title{
+  text-align:center;
+  font-size:30px;
+  margin-bottom:50px;
+  color:var(--accent);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:var(--secondary);
+  padding:30px;
+  border-radius:10px;
+  border:1px solid #1f2937;
+}
+
+.card h3{
+  margin-top:0;
+  color:var(--accent);
+}
+
+.card p{
+  color:var(--muted);
+  line-height:1.6;
+}
+
+.about{
+  max-width:800px;
+  margin:auto;
+  text-align:center;
+  line-height:1.8;
+  color:var(--muted);
+}
+
+footer{
+  background:#020617;
+  text-align:center;
+  padding:20px;
+  font-size:14px;
+  color:#6b7280;
+}
+
+@media(max-width:768px){
+  header{
+    padding:15px 20px;
+  }
+  section{
+    padding:60px 20px;
+  }
+  .hero h2{
+    font-size:30px;
+  }
 }
 </style>
 </head>
+
 <body>
 
 <header>
-  <div style="display:flex;align-items:center;gap:12px;">
-    <h1>RK InfoSec Solutions</h1>
-  </div>
+  <h1>RK InfoSec Solutions</h1>
   <nav>
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
-    <a href="blog.html">Blog</a>
-    <a href="internship.html">Training</a>
+    <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
 
-<section class="hero" id="home">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <h2>Enterprise-Grade Cybersecurity Solutions</h2>
-    <p>
-      RK InfoSec Solutions delivers premium cybersecurity services designed for modern enterprises — protecting digital assets through continuous prevention, real-time detection, and rapid incident response.
-    </p>
-    <div class="hero-tagline">Prevent • Detect • Respond</div>
+<!-- HERO SECTION -->
+<section class="hero">
+  <h2>Governance, Risk & Compliance (GRC) Advisory</h2>
+  <p>
+    RK InfoSec Solutions helps organizations build structured governance frameworks, manage risk exposure,
+    and achieve regulatory compliance through ISO 27001 implementation, internal audit, and enterprise risk management programs.
+  </p>
+  <a href="contact.html" class="btn">Request Consultation</a>
+</section>
+
+<!-- SERVICES -->
+<section>
+  <h2 class="section-title">Our Core Services</h2>
+  <div class="grid">
+    
+    <div class="card">
+      <h3>ISO 27001 Implementation</h3>
+      <p>End-to-end ISMS setup including gap analysis, documentation, control implementation, and certification readiness.</p>
+    </div>
+
+    <div class="card">
+      <h3>Risk Assessment & Treatment</h3>
+      <p>Comprehensive risk identification, scoring methodology, risk register development, and mitigation planning.</p>
+    </div>
+
+    <div class="card">
+      <h3>Internal Audit & Control Testing</h3>
+      <p>Independent evaluation of compliance posture and control effectiveness aligned with global standards.</p>
+    </div>
+
+    <div class="card">
+      <h3>SOC 2 Readiness</h3>
+      <p>Control mapping, documentation support, and audit preparation aligned with Trust Services Criteria.</p>
+    </div>
+
+    <div class="card">
+      <h3>Vendor Risk Management</h3>
+      <p>Third-party security assessment, supplier risk evaluation, and ongoing compliance monitoring.</p>
+    </div>
+
+    <div class="card">
+      <h3>Virtual CISO Advisory</h3>
+      <p>Strategic governance oversight, risk reporting, and compliance program supervision for growing organizations.</p>
+    </div>
+
   </div>
 </section>
 
-<section id="services">
-  <h2 class="section-title">Our Cybersecurity Services</h2>
-  <div class="services">
-    <div class="card"><h3>Vulnerability Assessment & Penetration Testing (VAPT)</h3><p>Comprehensive security testing for web apps, APIs, networks, cloud, and mobile with CVSS-based risk scoring.</p></div>
-    <div class="card"><h3>Security Operations Center (SOC)</h3><p>24/7 monitoring, SIEM correlation, alert triage, incident response, and threat hunting.</p></div>
-    <div class="card"><h3>Digital Forensics & Incident Response</h3><p>Evidence acquisition, malware analysis, root cause investigation, and post-incident reporting.</p></div>
-    <div class="card"><h3>Cloud & Network Security</h3><p>AWS/Azure security posture review, firewall hardening, IDS/IPS, and zero-trust architecture.</p></div>
-    <div class="card"><h3>Compliance & Risk Advisory</h3><p>Security alignment with ISO 27001, NIST CSF, and OWASP standards.</p></div>
-    <div class="card"><h3>Cybersecurity Training & Internships</h3><p>Hands-on SOC, VAPT, and Digital Forensics training programs.</p></div>
-  </div>
-</section>
-
-<section id="trust">
-  <h2 class="section-title">Why Enterprises Trust RK InfoSec</h2>
-  <div class="services">
-    <div class="card"><h3>Enterprise-Grade Methodology</h3><p>Security frameworks aligned with global standards and real-world threat models.</p></div>
-    <div class="card"><h3>SOC-Centric Security</h3><p>Detection-first approach with continuous monitoring and response.</p></div>
-    <div class="card"><h3>Actionable Reporting</h3><p>Executive summaries, technical findings, and remediation roadmaps.</p></div>
-    <div class="card"><h3>Trusted by Professionals</h3><p>Designed by cybersecurity practitioners for real enterprise environments.</p></div>
-  </div>
-</section>
-
-<!-- ================= ENTERPRISE SUB-PAGES TEMPLATES ================= -->
-<!-- services.html -->
-<!--
-<!DOCTYPE html>
-<html><head><title>Services | RK InfoSec Solutions</title></head>
-<body>
-<h1>Enterprise Cybersecurity Services</h1>
-<p>Detailed breakdown of VAPT, SOC, DFIR, Cloud Security, and Compliance offerings.</p>
-</body></html>
--->
-
-<!-- internship.html -->
-<!--
-<!DOCTYPE html>
-<html><head><title>Internship | RK InfoSec Solutions</title></head>
-<body>
-<h1>Cybersecurity Internship Program</h1>
-<p>SOC Intern | VAPT Intern | Digital Forensics Intern</p>
-<p><strong>Note:</strong> There are NO hidden charges for our internship programs.</p>
-</body></html>
--->
-
-<section id="compliance">
-  <h2 class="section-title">Compliance & Standards</h2>
-  <div class="services">
-    <div class="card"><h3>ISO/IEC 27001</h3><p>Information Security Management Systems aligned with international best practices.</p></div>
-    <div class="card"><h3>NIST Cybersecurity Framework</h3><p>Identify, Protect, Detect, Respond, and Recover security controls.</p></div>
-    <div class="card"><h3>OWASP Top 10</h3><p>Web application security testing aligned with OWASP standards.</p></div>
-  </div>
-</section>
-
-<section id="tools">
-  <h2 class="section-title">Tools & Technologies We Use</h2>
-  <div class="services">
-    <div class="card"><h3>VAPT & Offensive Security</h3><p>Nmap, Burp Suite, Metasploit, Nikto, SQLmap, OWASP ZAP</p></div>
-    <div class="card"><h3>SOC & Threat Detection</h3><p>Splunk, ELK Stack, Wazuh, SIEM, SOAR, Threat Intelligence Platforms</p></div>
-    <div class="card"><h3>Digital Forensics</h3><p>Autopsy, FTK Imager, Volatility, Wireshark</p></div>
-    <div class="card"><h3>Cloud & Network Security</h3><p>AWS Security Hub, Azure Defender, Firewalls, IDS/IPS</p></div>
-  </div>
-</section>
-
-<section id="about">
+<!-- ABOUT SECTION -->
+<section>
   <h2 class="section-title">About RK InfoSec Solutions</h2>
   <div class="about">
     <p>
-     RK InfoSec Solutions is a professional cybersecurity consulting firm delivering enterprise-grade services in Vulnerability Assessment & Penetration Testing (VAPT), Security Operations Center (SOC) monitoring, and Incident Response.
-We help organizations identify security risks, detect advanced threats, and respond effectively to cyber incidents.
-Our mission is to enable businesses to Prevent • Detect • Respond and build strong digital resilience.
+      RK InfoSec Solutions is a specialized Governance, Risk & Compliance (GRC) consultancy dedicated to helping
+      organizations achieve structured governance, risk transparency, and audit readiness. 
+      Our approach is practical, risk-driven, and aligned with business objectives — ensuring compliance strengthens operations rather than complicates them.
     </p>
   </div>
 </section>
 
-<!-- ✅ ONLY CHANGE: Map added here -->
-<section id="contact">
+<!-- CONTACT -->
+<section>
   <h2 class="section-title">Contact Us</h2>
-  <div class="contact">
+  <div class="about">
     <p>Email: rk.infosecc@gmail.com</p>
-    <p>Location: Surat,Gujarat,India (Remote Services Available)</p>
-
-    <!-- Google Map Embed (Added) -->
-    <div style="margin-top:30px;border-radius:16px;overflow:hidden;border:1px solid rgba(56,189,248,0.25);box-shadow:0 0 25px rgba(56,189,248,0.15);">
-      <iframe
-        src="https://www.google.com/maps?q=India&output=embed"
-        width="100%"
-        height="350"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
+    <p>Location: Surat, Gujarat, India</p>
   </div>
 </section>
 
 <footer>
-  © 2026 RK InfoSec Solutions| MSME Certified. All Rights Reserved.
+  © 2026 RK InfoSec Solutions | MSME Certified | All Rights Reserved
 </footer>
 
 </body>
