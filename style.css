@@ -59,7 +59,7 @@ nav a:hover { color: #38bdf8; }
 .hero {
   position: relative;
   min-height: 45vh;
-  background: url('Banner.png') center/cover no-repeat;
+  background: url('Rk_Banner.png') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -337,6 +337,7 @@ body {
     height: 420px;
   }
 }
+
 
 
 
